@@ -12,26 +12,25 @@ body  {
     background-color: rgb(86, 86, 129);
 }
 
-.container {
+#container {
     width: 50%;
     display: grid;
-    grid-template-columns: 2fr 1.6fr;
-    grid-template-rows: auo;
+    grid-template-columns: 1.2fr 1fr;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 10px;
     color: rgb(31, 31, 82);
 }
 
-main {
+#container main {
     display: flex;
     flex-direction: column;
-    padding: 50px;
-    margin: 0;
+    gap: 1rem;
+    margin: auto;
+    padding: 0 2rem;
 }
 
-h1 {
-    margin: 12px 0;
-    font-size: 2.4rem;
+main h1 {
+    font-size: 2rem;
     font-family: "Geologica", sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
@@ -42,43 +41,59 @@ h1 {
     "SHRP" 0;
 }
 
-p.briefing {
-    margin: 2px 0;
-    padding: 0;
+main .description {
     font-weight: 200;
+    font-size: 15px;
+}
+
+main .sub-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-left: -1px;
+}
+.sub-items .item {
+    display: flex;
+    align-items: center;
+}
+.sub-items .item span {
+    margin-left: 10px;
     font-size: 15px;
 }
 
 #sub-form {
     border: none;
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
 }
 
-label.email {
+#sub-form label.email {
     font-weight: 600;
-    font-size: 16px;
-    margin-top: 12px;
+    font-size: 15px;
 }
 
-input, .btn {
-    margin: 10px 0;
-    padding: 18px;
-    border: none;
-    border-radius: 10px;
+#sub-form input {
+    font-size: 14px;
+    opacity: 50%;
+    padding: 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 1px 1px;
 }
 
-input {
-    font-size: 13px;
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 0px 1px inset;
-}
-
-.btn {
+#sub-form .btn {
     background-color: rgb(32, 32, 56);
     color: #fff;
     font-weight: bold;
     font-size: 15px;
+    padding: 12px;
 }
+
+input, .btn {
+    border: none;
+    border-radius: 6px;
+}
+
 .btn:hover {
     background: linear-gradient(
           90deg,
@@ -88,17 +103,17 @@ input {
 }
 
 aside {
-    border: 1px solid;
-    margin: 0;
-    /* width: 100%;
+    /* border: 1px solid green;
+    width: 100%;
     height: 100%; */
+    padding: 10px;
 }
 aside img {
     width: 100%;
     height: 100%;
-    border: 1px solid red;
+    /* border: 1px solid black; */
 }
-    
+
 .attribution {
     color: #fff;
     font-size: 12px;
@@ -107,22 +122,4 @@ aside img {
 }
 .attribution a {
     color: hsl(228, 25%, 68%);
-}
- 
-.parent {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin: 10px;
-    margin-left: -6px;
-}
-.parent .item {
-    display: flex;
-    align-items: center;
-}
-span {
-    padding: 3px 0px 2px 6px;
-}
-.parent .item img {
-    width: 30px;
 }
