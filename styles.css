@@ -74,6 +74,14 @@ main .sub-items {
     font-size: 15px;
 }
 
+#sub-form .error-msg {
+    font-size: 14px;
+    text-align: end;
+    color: red;
+    margin: 0;
+    padding: 0;
+}
+
 #sub-form input {
     font-size: 14px;
     opacity: 50%;
