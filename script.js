@@ -28,4 +28,4 @@ function submitForm(e) {
     }
 }
 
-emailInput.addEventListener("input", submitForm);
+emailInput.addEventListener("onclick", submitForm);
