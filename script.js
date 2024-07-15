@@ -1,31 +1,43 @@
 const emailInput = document.getElementById("email");
 const errorMsg = document.getElementById("error-msg");
-const emailValue = document.getElementById("email").value;
+// const formElement = document.getElementById("sub-form");
 
-
-function addErrorMsg() {
-    // errorMsg.innerText = "Please enter your email!";
-    errorMsg.style.color = "#df1a1a";
+function addErrorMsg(message) {
+    errorMsg.style.display = "block";
+    errorMsg.style.color = "#df1a1a"
     emailInput.style.border = "1px solid #df1a1a";
+    emailInput.classList.add("invalid");
+    errorMsg.innerText = message;
+}
+
+function clearErrorMsg() {
+    errorMsg.style.display = "none";
+    emailInput.classList.remove("invalid");
+    errorMsg.innerText = "";
+}
+
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
 }
 
 function submitForm(e) {
     e.preventDefault();
+    clearErrorMsg();
 
-    const formElement = emailInput.value;
-    const validInput = formElement.checkValidity();
+    const emailValue = emailInput.value;
 
-    if (validInput) {
-        window.location.href("./successMsg.html")
+    if (emailValue === "") {
+        addErrorMsg("Email field is blank!");
+    } else if (!validateEmail(emailValue)) {
+        addErrorMsg("Please enter a valid email!");
     } else {
-        if (emailValue === "") {
-            addErrorMsg();
-            errorMsg.innerText = "Email field must be filled!";
-        } else {
-            addErrorMsg();
-            errorMsg.innerText = "Please enter a valid email!";
-        }
+        addErrorMsg("Valid email");
+        errorMsg.style.color = "green"
+        emailInput.style.border = "1px solid";
+        // window.location.href = "./successMsg.html";
     }
 }
 
-emailInput.addEventListener("onclick", submitForm);
+const btn = document.querySelector(".btn");
+btn.addEventListener("click", submitForm);
