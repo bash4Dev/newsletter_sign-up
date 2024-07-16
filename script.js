@@ -2,12 +2,12 @@ const emailInput = document.getElementById("email");
 const errorMsg = document.getElementById("error-msg");
 // const formElement = document.getElementById("sub-form");
 
-function addErrorMsg(message) {
+function addErrorMsg(msg) {
     errorMsg.style.display = "block";
     errorMsg.style.color = "#df1a1a"
     emailInput.style.border = "1px solid #df1a1a";
     emailInput.classList.add("invalid");
-    errorMsg.innerText = message;
+    errorMsg.innerText = msg;
 }
 
 function clearErrorMsg() {
@@ -32,10 +32,7 @@ function submitForm(e) {
     } else if (!validateEmail(emailValue)) {
         addErrorMsg("Please enter a valid email!");
     } else {
-        addErrorMsg("Valid email");
-        errorMsg.style.color = "green"
-        emailInput.style.border = "1px solid";
-        // window.location.href = "./successMsg.html";
+        return window.location.href = "./successMsg.html";
     }
 }
 
