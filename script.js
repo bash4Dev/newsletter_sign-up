@@ -30,8 +30,9 @@ function submitForm(e) {
     } else if (!validateEmail(emailValue)) {
         addErrorMsg("Please enter a valid email!");
     } else {
-        return window.location.href = "./success-msg.html";
+        window.location.href = "./success-msg.html";
     }
+    emailInput.value = "";
 }
 
 // const dismissBtn = document.getElementById("dismiss-btn");
