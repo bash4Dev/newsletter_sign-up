@@ -15,7 +15,7 @@ function clearErrorMsg() {
 }
 
 function validateEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/gi;
     return emailRegex.test(email);
 }
 
@@ -32,12 +32,13 @@ function submitForm(e) {
     } else {
         window.location.href = "./success-msg.html";
     }
-    emailInput.value = "";
+
 }
 
-// const dismissBtn = document.getElementById("dismiss-btn");
-// dismissBtn.addEventListener("click", () => {
-//     history.back();
-// });
 const btn = document.querySelector(".btn");
 btn.addEventListener("click", submitForm);
+btn.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+        submitForm();
+    }
+});
