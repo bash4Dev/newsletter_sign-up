@@ -14,17 +14,20 @@
   }
 
   #success-msg {
-    width: 36%;
+    width: 30%;
+    height: 60%;
     background-color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     color: rgb(31, 31, 82);
     padding: 2rem;
-    border-radius: 0.8rem;
+    border-radius: 15px;
   }
 
-  #success-msg svg {
+  #success-msg img {
+    width: 38px;
+    height: 38px;
     margin: 0;
   }
 
@@ -52,7 +55,7 @@
     background-color: rgba(2, 2, 24, 0.808);
     border: none;
     padding: 13px;
-    border-radius: 0.5rem;
+    border-radius: 5px;
   }
 
   #success-msg #dismiss-btn:hover {

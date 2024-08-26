@@ -15,8 +15,8 @@ body  {
 
 #container {
     width: 50%;
-    height: 72%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
     background-color: white;
     color: rgb(31, 31, 82);
     border-radius: 10px;
@@ -26,19 +26,8 @@ body  {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 0.8rem;
-    flex: 2;
-    padding: 0 1.5rem;
-}
-
-aside {
-    flex: 1.8;
-    padding: 0.7rem;
-}
-
-aside img {
-    width: 100%;
-    height: 100%;
+    gap: 1rem;
+    padding: 0 2rem;
 }
 
 main h1 {
@@ -62,6 +51,10 @@ main .sub-items {
     display: flex;
     align-items: center;
 }
+.sub-items .item img {
+    width: 20px;
+    height: 20px;
+}
 .sub-items .item span {
     margin-left: 10px;
     font-size: 15px;
@@ -75,7 +68,13 @@ main .sub-items {
     gap: 0.5rem;
 }
 
-#sub-form label.email {
+#sub-form > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#sub-form .email-address {
     font-weight: 600;
     font-size: 15px;
 }
@@ -87,7 +86,7 @@ main .sub-items {
 
 #sub-form input {
     font-size: 14px;
-    opacity: 50%;
+    opacity: 58%;
     padding: 12px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 1px 1px;
 }
@@ -113,6 +112,15 @@ input, .btn {
         );
 }
 
+aside {
+    padding: 0.7rem;
+}
+
+aside img {
+    width: 100%;
+    height: 100%;
+}
+
 .attribution {
     color: #fff;
     font-size: 12px;
@@ -121,4 +129,28 @@ input, .btn {
 }
 .attribution a {
     color: hsl(228, 25%, 68%);
+}
+
+@media (max-width: 376px) {
+    body  {
+        background-color:#fff;
+    }
+
+    #container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+    }
+
+    #container main {
+        order: 2;
+        padding: 0 2rem;
+    }
+
+    aside {
+        order: 1;
+        padding: 0;
+    }
 }
